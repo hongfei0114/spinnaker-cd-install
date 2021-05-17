@@ -1,0 +1,6 @@
+  
+server:
+  port: ${services.front50.port:8080}
+  address: ${services.front50.host:localhost}
+redis:
+  connection: ${services.redis.baseUrl:spin-redis://spin-redis:6379}

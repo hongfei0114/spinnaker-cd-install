@@ -1,2 +1,0 @@
-redis:
-  connection: ${services.redis.baseUrl:spin-redis://spin-redis:6379}

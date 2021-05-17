@@ -89,6 +89,7 @@ jobs:
         mkdir -p artifacts/${SPINNAKER_VERSION}
         mv ${TAG_FILE} artifacts/${SPINNAKER_VERSION}/
         mv tools/GetImages.sh artifacts/${SPINNAKER_VERSION}/
+        mv tools/CreateImgFile.sh artifacts/${SPINNAKER_VERSION}/
         ## install scripts files 
         sed -i "s/SPIN_VERSION/${SPINNAKER_VERSION}/g" tools/install.sh
         sed -i "s/SPIN_VERSION/${SPINNAKER_VERSION}/g" tools/halyard.sh

@@ -7,7 +7,7 @@ env:
   REGISTRY_URL: "us-docker.pkg.dev/spinnaker-community/docker/"
 
   # NEW_REGISTRY_URL: "ccr.ccs.tencentyun.com/gm-spinnaker/"
-  NEW_REGISTRY_URL: "ccr.ccs.tencentyun.com/wph-spinnaker/"  # 使用个人腾讯云镜像仓库地址
+  NEW_REGISTRY_URL: "ccr.ccs.tencentyun.com/wph-spinnaker/"  # 使用个人腾讯云镜像仓库地址 
 
   # NEW_REGISTRY_URL2: "docker.io/spinnakercd/"
   TAG_FILE: "tagfile.txt"

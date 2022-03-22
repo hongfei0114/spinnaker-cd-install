@@ -2,10 +2,13 @@
 
 name: Spinnaker Pre Install
 env:
-  SPINNAKER_VERSION: 1.22.0
+  SPINNAKER_VERSION: 1.26.7
   #REGISTRY_URL: "gcr.io/spinnaker-marketplace/"
   REGISTRY_URL: "us-docker.pkg.dev/spinnaker-community/docker/"
-  NEW_REGISTRY_URL: "ccr.ccs.tencentyun.com/gm-spinnaker/"
+
+  # NEW_REGISTRY_URL: "ccr.ccs.tencentyun.com/gm-spinnaker/"
+  NEW_REGISTRY_URL: "ccr.ccs.tencentyun.com/wph-spinnaker/"  # 使用个人腾讯云镜像仓库地址
+
   # NEW_REGISTRY_URL2: "docker.io/spinnakercd/"
   TAG_FILE: "tagfile.txt"
   BOM_DIR: ".boms"
@@ -75,7 +78,7 @@ jobs:
     #     done
     - name: 02-3-同步镜像到腾讯云镜像仓库
       run: |
-        docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
+        docker login -u ${{ secrets.WPH_DOCKER_USER}} -p ${{ secrets.WPH_DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
         for tag in $(cat ${TAG_FILE})
         do
            echo  -e "\033[32m  ---> push ---> ${NEW_REGISTRY_URL}${tag} \033[0m"
